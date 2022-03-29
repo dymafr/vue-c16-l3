@@ -16,6 +16,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import type { Component as C } from 'vue';
+import A from './A.vue';
+import B from './B.vue';
 
 const show = ref(true);
 </script>
