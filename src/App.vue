@@ -1,12 +1,18 @@
 <template>
   <div class="p-20">
     <div class="mb-20 d-flex w100 justify-content-center align-items-center">
-      <button class="btn btn-primary mr-20" @click="selectedComponent = 'A'">
-        Composant A
-      </button>
-      <button class="btn btn-primary" @click="selectedComponent = 'B'">
-        Composant B
-      </button>
+      <Transition name="fadeCircle" mode="out-in">
+        <button
+          v-if="selectedComponent === 'B'"
+          class="btn btn-primary mr-20"
+          @click="selectedComponent = 'A'"
+        >
+          Composant A
+        </button>
+        <button v-else class="btn btn-primary" @click="selectedComponent = 'B'">
+          Composant B
+        </button>
+      </Transition>
     </div>
     <Transition name="fadeRight" mode="out-in">
       <Component :is="components[selectedComponent]" />
@@ -43,6 +49,21 @@ const selectedComponent = ref('A');
 
 .fadeRight-enter-from {
   transform: translateX(-10px);
+  opacity: 0;
+}
+
+.fadeCircle-leave-to {
+  transform: translateX(30px) rotateY(180deg);
+  opacity: 0;
+}
+
+.fadeCircle-enter-active,
+.fadeCircle-leave-active {
+  transition: all 0.4s;
+}
+
+.fadeCircle-enter-from {
+  transform: translateX(-30px) rotateY(-180deg);
   opacity: 0;
 }
 </style>
