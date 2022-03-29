@@ -36,7 +36,13 @@ const selectedComponent = ref('A');
   opacity: 0;
 }
 
+.fadeRight-enter-active,
 .fadeRight-leave-active {
-  transition: all 1s;
+  transition: all 0.4s;
+}
+
+.fadeRight-enter-from {
+  transform: translateX(-10px);
+  opacity: 0;
 }
 </style>
