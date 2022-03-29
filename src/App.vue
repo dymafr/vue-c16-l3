@@ -20,7 +20,12 @@ import type { Component as C } from 'vue';
 import A from './A.vue';
 import B from './B.vue';
 
-const show = ref(true);
+const components: { [s: string]: C } = {
+  A,
+  B,
+};
+
+const selectedComponent = ref('A');
 </script>
 
 <style lang="scss">
