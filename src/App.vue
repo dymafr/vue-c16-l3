@@ -8,7 +8,7 @@
         Composant B
       </button>
     </div>
-    <Transition name="fade-right" mode="out-in">
+    <Transition name="fadeRight" mode="out-in">
       <Component :is="components[selectedComponent]" />
     </Transition>
   </div>
@@ -30,4 +30,13 @@ const selectedComponent = ref('A');
 
 <style lang="scss">
 @import './assets/scss/base.scss';
+
+.fadeRight-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.fadeRight-leave-active {
+  transition: all 1s;
+}
 </style>
