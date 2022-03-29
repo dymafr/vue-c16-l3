@@ -18,6 +18,7 @@
 }
 
 // reset
+
 * {
   box-sizing: border-box;
 }
@@ -41,6 +42,7 @@ img {
 a {
   color: var(--text-color);
   text-decoration: none;
+  cursor: pointer;
 }
 
 body {
@@ -50,6 +52,26 @@ body {
   font-family: var(--font-family);
   color: var(--text-color);
   background-color: var(--gray-1);
+}
+
+input,
+textarea,
+select {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 8px 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-3);
+}
+
+.form-error {
+  color: var(--danger-1);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 // flex
@@ -99,12 +121,12 @@ body {
 
 // margin
 
-.m-10 {
-  margin: 10px;
+.mb-5 {
+  margin-bottom: 5px;
 }
 
-.mb-10 {
-  margin-bottom: 10px;
+.m-10 {
+  margin: 10px;
 }
 
 .mr-10 {
@@ -115,8 +137,24 @@ body {
   margin-right: 20px;
 }
 
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
 .m-20 {
   margin: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }
 
 .m-30 {
@@ -156,4 +194,13 @@ body {
   &:hover {
     background-color: var(--success-2);
   }
+}
+
+// card
+
+.card {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: white;
+  padding: 30px;
 }

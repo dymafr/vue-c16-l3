@@ -7,10 +7,10 @@
       <button class="btn btn-primary" @click="selectedComponent = 'B'">
         Composant B
       </button>
-      <Transition>
-        <Component :is="components[selectedComponent]" />
-      </Transition>
     </div>
+    <Transition name="fade-right" mode="out-in">
+      <Component :is="components[selectedComponent]" />
+    </Transition>
   </div>
 </template>
 
